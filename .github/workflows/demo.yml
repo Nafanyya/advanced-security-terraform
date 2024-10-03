@@ -7,7 +7,7 @@ jobs:
         uses: actions/checkout@v4
       - uses: actions/checkout@v4
         with:
-          repository: https://github.com/bridgecrewio/checkov.git
+          repository: bridgecrewio/checkov
           ref: main
           token: ${{ secrets.TOKEN }}
       - run: cd checkov && checkov -d . -o sarif

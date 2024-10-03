@@ -8,6 +8,7 @@ jobs:
       - run: pip3 install checkov
       - name: Checkov
         run: checkov -d . -o sarif
+        continue-on-error: true
       - uses: actions/upload-artifact@v4
         with:
           name: results

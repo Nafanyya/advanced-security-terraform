@@ -5,12 +5,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - uses: actions/checkout@v4
-        with:
-          repository: bridgecrewio/checkov
-          ref: main
-          token: ${{ secrets.TOKEN }}
-      - run: cd checkov && checkov -d . -o sarif
+      - run: pip3 install checkov
+      - run: checkov -d . -o sarif
       - uses: actions/upload-artifact@v4
         with:
           name: results

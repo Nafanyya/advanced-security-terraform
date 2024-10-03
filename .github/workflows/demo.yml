@@ -7,7 +7,7 @@ jobs:
         uses: actions/checkout@v4
       - run: pip3 install checkov
       - name: Checkov
-        working-directory: ${{github.workspace}}\advanced-security-terraform
+        working-directory: ${{github.workspace}}/advanced-security-terraform
         run: checkov -d . -o sarif
       - uses: actions/upload-artifact@v4
         with:

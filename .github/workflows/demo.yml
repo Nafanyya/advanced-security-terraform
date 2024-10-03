@@ -6,7 +6,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - run: pip3 install checkov
-      - run: checkov -d /advanced-security-terraform/terraform -o sarif
+      - run: checkov -d /terraform -o sarif
       - uses: actions/upload-artifact@v4
         with:
           name: results
